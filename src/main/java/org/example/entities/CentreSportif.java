@@ -5,32 +5,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="Centre_Sportif")
-@Inheritance(strategy = InheritanceType.JOINED)
-public abstract class CentreSportif {
+
+public  class CentreSportif {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String utilisateur;
-
-    public String getUtilisateur ( ) {
-        return utilisateur;
-    }
-
-    public void setUtilisateur (String utilisateur) {
-        this.utilisateur = utilisateur;
-    }
-
-
 
     @OneToMany(mappedBy = "centreSportif")
     private List<Adherent> adherents = new ArrayList<>();
 
-    @OneToMany(mappedBy = "centreSportif")
-    private List<Activites> activites  = new ArrayList<>();
     public  CentreSportif ( ) {
-        super();
+
     }
 
     public int getId ( ) {
@@ -50,13 +36,8 @@ public abstract class CentreSportif {
         this.adherents = adherents;
     }
 
-    public List<Activites> getActivites ( ) {
-        return activites;
-    }
 
-    public void setActivites (List<Activites> activites) {
-        this.activites = activites;
-    }
+
 
     @Override
     public String toString ( ) {

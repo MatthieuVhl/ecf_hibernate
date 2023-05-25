@@ -6,8 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name="adherent")
-@PrimaryKeyJoinColumn(name = "centreSportif_id")
-public class Adherent extends CentreSportif {
+public class Adherent  {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -15,9 +14,9 @@ public class Adherent extends CentreSportif {
     private String prenom;
     private String age;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "centre_sportif_id")
-    private  CentreSportif centreSportif;
+    @ManyToOne
+//    @JoinColumn(name = "centre_sportif_id")
+    private CentreSportif centreSportif;
 
     @ManyToMany
     @JoinTable(name = "adherent_activites", joinColumns = @JoinColumn(name="adherent_id"),
@@ -25,7 +24,7 @@ public class Adherent extends CentreSportif {
     private List<Activites> activites= new ArrayList<>();
 
     public Adherent ( ) {
-        super();
+
     }
 
     public Adherent (String nom, String prenom, String age) {

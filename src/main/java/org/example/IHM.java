@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class IHM {
-    private AdherentService adherentService = new AdherentService();
-    private ActivitesService activitesService = new ActivitesService();
+    private AdherentService adherentService;// = new AdherentService();
+    private ActivitesService activitesService;// = new ActivitesService();
     private Scanner scanner;
 
     public IHM(){

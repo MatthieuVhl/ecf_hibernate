@@ -6,8 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "activites")
-@PrimaryKeyJoinColumn(name = "centreSportif_id")
-public class Activites extends CentreSportif{
+public class Activites {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -18,12 +17,12 @@ public class Activites extends CentreSportif{
 @JoinColumn(name = "centre_sportif_id")
 private  CentreSportif centreSportif;
 
-@ManyToMany(mappedBy = "CentreSportif")
+@ManyToMany(mappedBy = "centre_sportif")
 private List<Adherent> adherents = new ArrayList<>();
 
 
     public Activites ( ) {
-        super();
+
 
     }
 

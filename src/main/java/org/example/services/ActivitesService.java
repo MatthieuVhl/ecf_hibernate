@@ -1,7 +1,6 @@
 package org.example.services;
 
 import org.example.entities.Activites;
-import org.example.entities.Adherent;
 import org.example.interfaces.Repository;
 import org.hibernate.query.Query;
 
