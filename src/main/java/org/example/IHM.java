@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class IHM {
-    private AdherentService adherentService;// = new AdherentService();
-    private ActivitesService activitesService;// = new ActivitesService();
+    private AdherentService adherentService;
+    private ActivitesService activitesService;
     private Scanner scanner;
 
     public IHM(){
@@ -150,10 +150,6 @@ private void affAllAdherentById(){
             System.out.println(act);
         }
     }
+    }
 
-// if (adherentService.addNewActivite(acti,id)){
-//        System.out.println("Activité et cour ajouté");
-//    }else{
-//        System.out.println("Erreur lors de l'ajout d'activité et cour");
 
-}

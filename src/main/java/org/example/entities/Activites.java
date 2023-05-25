@@ -17,7 +17,7 @@ public class Activites {
 @JoinColumn(name = "centre_sportif_id")
 private  CentreSportif centreSportif;
 
-@ManyToMany(mappedBy = "centre_sportif")
+@ManyToMany(mappedBy = "activites")
 private List<Adherent> adherents = new ArrayList<>();
 
 

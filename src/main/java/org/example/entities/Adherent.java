@@ -15,7 +15,7 @@ public class Adherent  {
     private String age;
 
     @ManyToOne
-//    @JoinColumn(name = "centre_sportif_id")
+    @JoinColumn(name = "centre_sportif_id")
     private CentreSportif centreSportif;
 
     @ManyToMany
