@@ -44,8 +44,12 @@ public class IHM {
                     affAllActivitesById();
                     break;
                 case "7":
-                    ;
+                    deleteAdherent();
                     break;
+                case "8":
+                    addActivites();
+                    break;
+
             }
         }while(!choice.equals("0"));
 
@@ -60,7 +64,8 @@ public class IHM {
         System.out.println("4 -- Ajouter une activité et un cour");
         System.out.println("5 -- Mise a jour d'information sur les cours et activités");
         System.out.println("6 -- Afficher la liste des cours et activités");
-        System.out.println("7 -- Inscription a un cours ou une activité");
+        System.out.println("7 -- Supprimer un adherent");
+        System.out.println("8 -- ajouter une activite a un adherent");
         System.out.println("0 -- Quitter");
     }
 
@@ -103,6 +108,14 @@ private void updateAdherent(){
         System.out.println(e.getMessage());
 }
 }
+private void deleteAdherent(){
+ System.out.println("Merci de saisir l'id : ");
+    int id = scanner.nextInt();
+        scanner.nextLine();
+        Adherent adh = adherentService.findById(id);
+        adherentService.delete(adh);
+
+    }
 
 private void affAllAdherentById(){
     List<Adherent>adherents = adherentService.findAll();
@@ -111,10 +124,15 @@ private void affAllAdherentById(){
     }
 }
     private void addActivites(){
+
         System.out.println("Merci de saisir un cour");
         String cours = scanner.nextLine();
         System.out.println("Merci de saisir une activité");
         String activite = scanner.nextLine();
+        System.out.println("a qu'elle id souhaiter vous ajouter c'est activite");
+        int id =scanner.nextInt();
+        scanner.nextLine();
+
         try {
             Activites act = new Activites(cours,activite);
             activitesService.create(act);
@@ -150,6 +168,8 @@ private void affAllAdherentById(){
             System.out.println(act);
         }
     }
+
+
     }
 
 

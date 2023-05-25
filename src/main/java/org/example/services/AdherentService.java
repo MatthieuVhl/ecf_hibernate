@@ -30,11 +30,16 @@ public class AdherentService  extends  BaseService implements Repository<Adheren
 
     @Override
     public boolean delete (Adherent o) {
-        return false;
+        session = sessionFactory.openSession();
+        session.beginTransaction();
+        session.delete(o);
+        session.getTransaction().commit();
+        session.close();
+        return true;
     }
 
     @Override
-    public Adherent findById (int id) {
+    public  Adherent findById (int id) {
         Adherent adherent = null;
         session = sessionFactory.openSession();
         adherent = (Adherent) session.get(Adherent.class,id);

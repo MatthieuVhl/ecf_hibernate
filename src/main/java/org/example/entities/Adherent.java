@@ -81,6 +81,10 @@ public class Adherent  {
         this.activites = activites;
     }
 
+    public void addActivites(Activites activites){
+        getActivites().add(activites);
+    }
+
     @Override
     public String toString ( ) {
         return "Adherent{" +
